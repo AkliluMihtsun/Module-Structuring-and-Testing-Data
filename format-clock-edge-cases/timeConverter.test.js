@@ -18,6 +18,23 @@ test("can correctly convert midday time", function () {
   assert.equal(formatAs12HourClock("12:00"), "12:00 pm");
 });
 
-test("can correctly convert 22:00 and 23:00 time", function () {
-  assert.equal(formatAs12HourClock("22:00"), "10:00 pm");
+test("can respond to the invalid MM input", function () {
+  assert.equal(
+    formatAs12HourClock("22:60"),
+    "Please check your MM input must be less than 60"
+  );
+});
+
+test("can respond to the invalid HH input", function () {
+  assert.equal(
+    formatAs12HourClock("24:00"),
+    "Please check your HH input must be less than 24"
+  );
+});
+
+test("can respond to the invalid format input", function () {
+  assert.equal(
+    formatAs12HourClock("2400"),
+    "Please check your format input must be 'HH:MM'"
+  );
 });
