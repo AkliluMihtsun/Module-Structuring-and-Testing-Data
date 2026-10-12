@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "Code Your Future",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "jest": "^29.7.0"
   }
 }
