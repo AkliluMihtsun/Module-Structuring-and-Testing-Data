@@ -43,5 +43,5 @@ export function getCardValue(card) {
         return 11;
     }*/
   }
-  throw new Error('Expected a number followed by a suit, but got "invalid"');
+  throw new Error("invalid");
 }
