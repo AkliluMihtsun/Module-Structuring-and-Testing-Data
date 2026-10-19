@@ -31,16 +31,11 @@ test(`should return "Reflex angle" when (180 < angle < 360)`, () => {
   expect(getAngleType(260)).toEqual("Reflex angle");
   expect(getAngleType(359)).toEqual("Reflex angle");
 });
-//Case 6: Full angle
-test(`should return "Full angle" when (angle === 360)`, () => {
-  expect(getAngleType(360)).toEqual("Full angle");
-});
-// Case 7: Zero angle
-test(`should return "Zero angle" when (angle === 0)`, () => {
-  expect(getAngleType(0)).toEqual("Zero angle");
-});
+
 // Case 8: Invalid angles
-test(`should return "Invalid angle" when (angle < 0 or angle > 360)`, () => {
+test(`should return "Invalid angle" when (angle <= 0 or angle >= 360)`, () => {
   expect(getAngleType(400)).toEqual("Invalid angle");
   expect(getAngleType(-12)).toEqual("Invalid angle");
+  expect(getAngleType(0)).toEqual("Invalid angle");
+  expect(getAngleType(360)).toEqual("Invalid angle");
 });
