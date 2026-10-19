@@ -27,14 +27,21 @@ export function getCardValue(card) {
   // TODO: Implement this function
   const format = /^([AJQK]|[2-9]|10)[♠♥♦♣]$/;
   if (typeof card === "string" && format.test(card)) {
-    switch (true) {
+    if (parseInt(card) >= 2 && parseInt(card) <= 10) {
+      return parseInt(card);
+    } else if (card[0] === "K" || card[0] === "Q" || card[0] === "J") {
+      return 10;
+    } else if (card[0] === "A") {
+      return 11;
+    }
+    /* switch (true) {
       case parseInt(card) >= 2 && parseInt(card) <= 10:
         return parseInt(card);
       case card[0] === "K" || card[0] === "Q" || card[0] === "J":
         return 10;
       case card[0] === "A":
         return 11;
-    }
+    }*/
   }
   throw new Error('Expected a number followed by a suit, but got "invalid"');
 }

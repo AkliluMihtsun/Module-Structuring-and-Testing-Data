@@ -22,7 +22,11 @@ test(`Should return 10 when given face card`, () => {
 test(`Should return invalid when given invalid card`, () => {
   expect(() => {
     getCardValue("L♣").toThrow("invalid");
+  });
+  expect(() => {
     getCardValue("A*").toThrow("invalid");
+  });
+  expect(() => {
     getCardValue("12♣").toThrow("invalid");
   });
 });
