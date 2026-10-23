@@ -1,9 +1,6 @@
 export function getOrdinalNumber(num) {
   const numStr = num.toString();
   const numLength = numStr.length;
-  const pattern1 = /^(11|12|13)$/;
-  const pattern2 = /^0$/;
-  const pattern3 = /^(4|5|6|7|8|9)$/;
   const last2digits = numStr.slice(-2);
   const last1digit = numStr.slice(-1);
 
