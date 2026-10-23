@@ -13,11 +13,6 @@ export function getOrdinalNumber(num) {
     return `${numStr}nd`;
   } else if (numStr[numLength - 1] == "3" && numStr[numLength - 2] != "1") {
     return `${numStr}rd`;
-  } else if (
-    pattern1.test(last2digits) ||
-    pattern2.test(last1digit) ||
-    pattern3.test(last1digit)
-  ) {
-    return `${numStr}th`;
   }
+  return `${numStr}th`;
 }
